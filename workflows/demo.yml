@@ -3,7 +3,7 @@ name: Basic Practice Workflow
 on:
   push:
     branches:
-      - '*' # Trigger on any branch push
+      - 'feature' # Trigger on any branch push
 
 jobs:
   practice-job:
