@@ -1,0 +1,27 @@
+name: Basic Practice Workflow
+
+on:
+  push:
+    branches:
+      - '*' # Trigger on any branch push
+
+jobs:
+  practice-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Say Hello
+        run: echo "Hello, World!"
+
+      - name: Run a simple test
+        run: |
+          echo "Testing if 2 + 2 equals 4..."
+          if [ $((2 + 2)) -eq 4 ]; then
+            echo "Test passed!"
+          else
+            echo "Test failed!"
+            exit 1
+          fi
